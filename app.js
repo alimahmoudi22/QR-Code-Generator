@@ -10,6 +10,10 @@ async function fetchQRHandler() {
     if (!inputValue) {
         imageDiv.style.display = "none";
         showModal("Please enter a valid input!");
+        inputElm.classList.add("error");
+        setTimeout(() => {
+            inputElm.classList.remove("error")
+        },1000)
         return;
     }
 
@@ -22,7 +26,6 @@ async function fetchQRHandler() {
 
         imageElm.setAttribute("src", response.url);
         imageDiv.style.display = "block";
-        
         inputElm.value = "";
     } catch (error) {
         console.warn("Error:", error);
@@ -36,7 +39,7 @@ function showModal(message) {
 
     setTimeout(() => {
         modal.style.display = "none";
-    }, 3000);
+    }, 1000);
 }
 
 cardBtn.addEventListener("click", fetchQRHandler);

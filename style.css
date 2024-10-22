@@ -21,7 +21,7 @@ body{
     width: 40rem;
     border-radius: 1rem;
     padding: 4rem;
-    transition: all 500ms ease-in;
+    transition: all 1000ms ease-in;
 }
 .main-card{
     display: flex;
@@ -71,4 +71,26 @@ img{
     cursor: pointer;
     font-weight: 600;
     margin-top: 3rem;
+}
+
+.error{
+    animation: shake 0.1s linear 10;
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
